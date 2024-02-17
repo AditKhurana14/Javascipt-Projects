@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <title>Document</title>
+</head>
+
+<body class="bg-gradient-to-r from-gray-900 to-gray-600 bg-gradient-to-r text-white">
+    <div class="h-screen py-3 px-4">
+        <div class="flex justify-center">
+            <h1 class="text-4xl ">Age Calculator</h1>
+        </div>
+
+
+        <div class="flex py-8 justify-center  ">
+            <form action="" class="flex flex-col ">
+                <input type="date" placeholder="Enter Salary" id="salary" class="py-3 px-5 mb-4 text-black  " >
+
+                <a class="bg-purple-500 px-4 py-2  " onclick="calc()">Calculate</a>
+
+
+            </form>
+
+
+
+        </div>
+
+
+        <div class="flex justify-center mx-10 ">
+            <div class="flex flex-col">
+
+            <p class="text-3xl" id="text1"></p>
+            <br>
+            <p class="text-3xl" id="text2"></p>
+            <br>
+            <p class="text-3xl" id="text3"></p>
+            <br>
+        </div>
+        </div>
+
+
+
+
+    </div>
+
+
+    <script>
+        function calc() {
+            let s = document.getElementById("salary").value
+            let today=new Date()
+            let inp=new Date(s);
+            
+            let year=Math.floor((today-inp)/ (365.25 * 24 * 60 * 60 * 1000));
+            let months=Math.floor((today-inp)/ ( 30 * 24 * 60 * 60 * 1000));
+            let days=Math.floor((today-inp)/ ( 24 * 60 * 60 * 1000));
+            
+
+           
+
+
+            document.getElementById("text1").innerHTML = "Your age is is " +year+" in years"
+            document.getElementById("text2").innerHTML = "Your montly age  is " +months +" in months "
+            document.getElementById("text3").innerHTML = "Your day in age " +days + " in days"
+        }
+    </script>
+
+</body>
+
+</html>
